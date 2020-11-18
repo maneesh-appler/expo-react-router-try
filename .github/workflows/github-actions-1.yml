@@ -21,10 +21,11 @@ jobs:
       # - name: Install Node.js dependencies
         # run: npm install
   Linting:
+    needs: check-bats-version
     runs-on: ubuntu-latest   
     steps:   
       - name: Run linters
-        needs: check-bats-version
+        
         uses: wearerequired/lint-action@v1
         with:
           github_token: ${{ secrets.github_token }}
