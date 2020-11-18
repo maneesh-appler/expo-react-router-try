@@ -9,27 +9,36 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       # - run: npm install -g bats
-      - run: yarn install
       - run: npm install -g eslint
-      - run: bats -v
+      - run: yarn install
+      # - run: bats -v
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12
 
       # ESLint and Prettier must be in `package.json`
       # - name: Install Node.js dependencies
         # run: npm install
-  Linting:
-    needs: check-bats-version
-    runs-on: ubuntu-latest   
-    steps:   
+
       - name: Run linters
-        
         uses: wearerequired/lint-action@v1
         with:
           github_token: ${{ secrets.github_token }}
           # Enable linters
           eslint: true
           prettier: true
+
+
+  # Linting:
+  #   needs: check-bats-version
+  #   runs-on: ubuntu-latest   
+  #   steps:   
+  #     - name: Run linters
+  #       uses: wearerequired/lint-action@v1
+  #       with:
+  #         github_token: ${{ secrets.github_token }}
+  #         # Enable linters
+  #         eslint: true
+  #         prettier: true
