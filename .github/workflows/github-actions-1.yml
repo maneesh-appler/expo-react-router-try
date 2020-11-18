@@ -20,7 +20,8 @@ jobs:
       # ESLint and Prettier must be in `package.json`
       # - name: Install Node.js dependencies
         # run: npm install
-  Linting:   
+  Linting:
+    runs-on: ubuntu-latest   
     steps:   
       - name: Run linters
         needs: check-bats-version
