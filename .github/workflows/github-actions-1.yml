@@ -1,5 +1,7 @@
 name: learn-github-actions
 on: [push]
+env:
+  secrets.github_token: d90f2ae2ddcb5ac8810662c3c447a48944c8ef36 
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
