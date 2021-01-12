@@ -41,7 +41,7 @@ export default function SecondScreen() {
     // </View>
 
 <>
-<DatePickerModal
+{/* <DatePickerModal
         mode="single"
         visible={visible}
         onDismiss={onDismiss}
@@ -50,7 +50,7 @@ export default function SecondScreen() {
         saveLabel="Save" // optional
         label="Select date" // optional
         animationType="slide" // optional, default is 'slide' on ios/android and 'none' on web
-      />
+      /> */}
       <Button onPress={()=> setVisible(true)}>
         Pick date
       </Button>
